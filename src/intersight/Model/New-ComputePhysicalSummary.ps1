@@ -120,6 +120,9 @@ function New-ComputePhysicalSummary {
         ${Rn},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
+        ${ScaledMode},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
         ${Serial},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[Int64]]
@@ -191,6 +194,7 @@ function New-ComputePhysicalSummary {
             ${RegisteredDevice},
             ${Revision},
             ${Rn},
+            ${ScaledMode},
             ${Serial},
             ${ServerId},
             ${ServiceProfile},

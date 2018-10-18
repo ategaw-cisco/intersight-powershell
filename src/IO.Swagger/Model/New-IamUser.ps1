@@ -41,6 +41,9 @@ function New-IamUser {
         [String]
         ${FirstName},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[intersight.Model.IamIdpRef]]
+        ${Idp},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[intersight.Model.IamIdpReferenceRef]]
         ${Idpreference},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
@@ -52,6 +55,9 @@ function New-IamUser {
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
         ${Name},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[intersight.Model.IamPermissionRef[]]]
+        ${Permissions},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[intersight.Model.IamSessionRef[]]]
         ${Sessions},
@@ -78,10 +84,12 @@ function New-IamUser {
             ${ClientIpAddress},
             ${Email},
             ${FirstName},
+            ${Idp},
             ${Idpreference},
             ${LastLoginTime},
             ${LastName},
             ${Name},
+            ${Permissions},
             ${Sessions},
             ${UserType}
         )

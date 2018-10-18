@@ -56,6 +56,9 @@ function New-EquipmentPsu {
         [System.Nullable[intersight.Model.EquipmentChassisRef]]
         ${EquipmentChassis},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[intersight.Model.EquipmentRackEnclosureRef]]
+        ${EquipmentRackEnclosure},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[intersight.Model.NetworkElementRef]]
         ${NetworkElement},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
@@ -95,6 +98,7 @@ function New-EquipmentPsu {
             ${Vendor},
             ${ComputeRackUnit},
             ${EquipmentChassis},
+            ${EquipmentRackEnclosure},
             ${NetworkElement},
             ${OperState},
             ${Presence},

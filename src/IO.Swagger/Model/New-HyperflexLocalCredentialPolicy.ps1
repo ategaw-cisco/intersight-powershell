@@ -38,6 +38,9 @@ function New-HyperflexLocalCredentialPolicy {
         [System.Nullable[intersight.Model.HyperflexClusterProfileRef[]]]
         ${ClusterProfiles},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[Boolean]]
+        ${FactoryHypervisorPassword},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
         ${HxdpRootPwd},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
@@ -74,6 +77,7 @@ function New-HyperflexLocalCredentialPolicy {
             ${Description},
             ${Name},
             ${ClusterProfiles},
+            ${FactoryHypervisorPassword},
             ${HxdpRootPwd},
             ${HypervisorAdmin},
             ${HypervisorAdminPwd},

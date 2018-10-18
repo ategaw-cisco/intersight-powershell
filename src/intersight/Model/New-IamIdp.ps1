@@ -33,16 +33,31 @@ function New-IamIdp {
         ${Account},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
-        ${ConfigState},
+        ${DomainName},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
         ${IdpEntityId},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
+        ${Metadata},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
         ${Name},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[intersight.Model.IamSystemRef]]
-        ${System}
+        ${System},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[intersight.Model.IamUserLoginTimeRef[]]]
+        ${UserLoginTime},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[intersight.Model.IamUserPreferenceRef[]]]
+        ${UserPreferences},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[intersight.Model.IamUserGroupRef[]]]
+        ${Usergroups},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[intersight.Model.IamUserRef[]]]
+        ${Users}
     )
 
     Process {
@@ -60,10 +75,15 @@ function New-IamIdp {
             ${Parent},
             ${Tags},
             ${Account},
-            ${ConfigState},
+            ${DomainName},
             ${IdpEntityId},
+            ${Metadata},
             ${Name},
-            ${System}
+            ${System},
+            ${UserLoginTime},
+            ${UserPreferences},
+            ${Usergroups},
+            ${Users}
         )
     }
 }

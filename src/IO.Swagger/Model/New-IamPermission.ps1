@@ -35,14 +35,17 @@ function New-IamPermission {
         [System.Nullable[intersight.Model.IamEndPointRoleRef[]]]
         ${EndPointRoles},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${Name},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[intersight.Model.IamRoleRef[]]]
         ${Roles},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
-        [String]
-        ${Subject},
+        [System.Nullable[intersight.Model.IamUserGroupRef[]]]
+        ${UserGroups},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
-        [String]
-        ${Type}
+        [System.Nullable[intersight.Model.IamUserRef[]]]
+        ${Users}
     )
 
     Process {
@@ -61,9 +64,10 @@ function New-IamPermission {
             ${Tags},
             ${Account},
             ${EndPointRoles},
+            ${Name},
             ${Roles},
-            ${Subject},
-            ${Type}
+            ${UserGroups},
+            ${Users}
         )
     }
 }

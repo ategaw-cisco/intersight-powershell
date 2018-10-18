@@ -53,14 +53,14 @@ function New-WorkflowWorkflowMeta {
         [System.Nullable[String]]
         ${Tasks},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${Type},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[Int64]]
         ${Version},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[Boolean]]
-        ${WaitOnDuplicate},
-        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
-        [System.Nullable[intersight.Model.WorkflowWorkflowTaskRef[]]]
-        ${WorkflowTasks}
+        ${WaitOnDuplicate}
     )
 
     Process {
@@ -85,9 +85,9 @@ function New-WorkflowWorkflowMeta {
             ${SchemaVersion},
             ${Src},
             ${Tasks},
+            ${Type},
             ${Version},
-            ${WaitOnDuplicate},
-            ${WorkflowTasks}
+            ${WaitOnDuplicate}
         )
     }
 }

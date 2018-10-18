@@ -29,6 +29,9 @@ function New-IamSession {
         [System.Nullable[intersight.Model.MoTag[]]]
         ${Tags},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[intersight.Model.IamAccountPermissions[]]]
+        ${AccountPermissions},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
         ${ClientIpAddress},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
@@ -43,6 +46,9 @@ function New-IamSession {
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[System.DateTime]]
         ${LastLoginTime},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[intersight.Model.IamPermissionRef]]
+        ${Permission},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[intersight.Model.IamUserRef]]
         ${User}
@@ -62,11 +68,13 @@ function New-IamSession {
             ${Owners},
             ${Parent},
             ${Tags},
+            ${AccountPermissions},
             ${ClientIpAddress},
             ${Expiration},
             ${IdleTimeExpiration},
             ${LastLoginClient},
             ${LastLoginTime},
+            ${Permission},
             ${User}
         )
     }

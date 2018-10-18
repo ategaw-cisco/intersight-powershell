@@ -63,6 +63,9 @@ function New-BiosPolicy {
         ${BaudRate},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
+        ${BmeDmaMitigation},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
         ${BootOptionNumRetry},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
@@ -73,6 +76,42 @@ function New-BiosPolicy {
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
         ${BootPerformanceMode},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${CbsCmnCpuCpb},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${CbsCmnCpuGenDowncoreCtrl},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${CbsCmnCpuGlobalCstateCtrl},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${CbsCmnCpuL1streamHwPrefetcher},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${CbsCmnCpuL2streamHwPrefetcher},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${CbsCmnDeterminismSlider},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${CbsCmnGnbNbIommu},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${CbsCmnMemCtrlBankGroupSwapDdr4},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${CbsCmnMemMapBankInterleaveDdr4},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${CbsCmncTdpCtl},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${CbsDfCmnMemIntlv},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${CbsDfCmnMemIntlvSize},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
         ${CdnEnable},
@@ -441,6 +480,12 @@ function New-BiosPolicy {
         ${SlotHbaState},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
+        ${SlotLom1link},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${SlotLom2link},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
         ${SlotMezzState},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
@@ -597,6 +642,12 @@ function New-BiosPolicy {
         ${SlotSsdSlot2linkSpeed},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
+        ${Smee},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${SmtMode},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
         ${Snc},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
@@ -607,6 +658,9 @@ function New-BiosPolicy {
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
         ${StreamerPrefetch},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${SvmMode},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
         ${TerminalType},
@@ -651,6 +705,9 @@ function New-BiosPolicy {
         ${VgaPriority},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
+        ${VmdEnable},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
         ${WorkLoadConfig},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
@@ -682,10 +739,23 @@ function New-BiosPolicy {
             ${AutoCcState},
             ${AutonumousCstateEnable},
             ${BaudRate},
+            ${BmeDmaMitigation},
             ${BootOptionNumRetry},
             ${BootOptionReCoolDown},
             ${BootOptionRetry},
             ${BootPerformanceMode},
+            ${CbsCmnCpuCpb},
+            ${CbsCmnCpuGenDowncoreCtrl},
+            ${CbsCmnCpuGlobalCstateCtrl},
+            ${CbsCmnCpuL1streamHwPrefetcher},
+            ${CbsCmnCpuL2streamHwPrefetcher},
+            ${CbsCmnDeterminismSlider},
+            ${CbsCmnGnbNbIommu},
+            ${CbsCmnMemCtrlBankGroupSwapDdr4},
+            ${CbsCmnMemMapBankInterleaveDdr4},
+            ${CbsCmncTdpCtl},
+            ${CbsDfCmnMemIntlv},
+            ${CbsDfCmnMemIntlvSize},
             ${CdnEnable},
             ${CdnSupport},
             ${ChannelInterLeave},
@@ -808,6 +878,8 @@ function New-BiosPolicy {
             ${SlotFrontSlot6linkSpeed},
             ${SlotHbaLinkSpeed},
             ${SlotHbaState},
+            ${SlotLom1link},
+            ${SlotLom2link},
             ${SlotMezzState},
             ${SlotMlomLinkSpeed},
             ${SlotMlomState},
@@ -860,10 +932,13 @@ function New-BiosPolicy {
             ${SlotSasState},
             ${SlotSsdSlot1linkSpeed},
             ${SlotSsdSlot2linkSpeed},
+            ${Smee},
+            ${SmtMode},
             ${Snc},
             ${SparingMode},
             ${SrIov},
             ${StreamerPrefetch},
+            ${SvmMode},
             ${TerminalType},
             ${TpmControl},
             ${TpmSupport},
@@ -878,6 +953,7 @@ function New-BiosPolicy {
             ${UsbPortVmedia},
             ${UsbXhciSupport},
             ${VgaPriority},
+            ${VmdEnable},
             ${WorkLoadConfig},
             ${XptPrefetch}
         )

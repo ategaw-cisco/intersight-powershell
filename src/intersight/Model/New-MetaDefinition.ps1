@@ -33,9 +33,6 @@ function New-MetaDefinition {
         ${AncestorClasses},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[Boolean]]
-        ${ExternalType},
-        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
-        [System.Nullable[Boolean]]
         ${IsConcrete},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
@@ -43,9 +40,6 @@ function New-MetaDefinition {
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
         ${Namespace},
-        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
-        [System.Nullable[Boolean]]
-        ${Observe},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
         ${ParentClass},
@@ -78,11 +72,9 @@ function New-MetaDefinition {
             ${Parent},
             ${Tags},
             ${AncestorClasses},
-            ${ExternalType},
             ${IsConcrete},
             ${Name},
             ${Namespace},
-            ${Observe},
             ${ParentClass},
             ${Properties},
             ${Relationships},

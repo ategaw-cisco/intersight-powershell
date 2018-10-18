@@ -44,6 +44,9 @@ function New-WorkflowTaskInfo {
         [String]
         ${InstId},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[Boolean]]
+        ${Internal},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
         ${Name},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
@@ -88,6 +91,7 @@ function New-WorkflowTaskInfo {
             ${FailureReason},
             ${Input},
             ${InstId},
+            ${Internal},
             ${Name},
             ${Output},
             ${RefName},

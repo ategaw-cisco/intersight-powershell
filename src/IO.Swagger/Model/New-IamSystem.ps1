@@ -45,7 +45,10 @@ function New-IamSystem {
         ${Privileges},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[intersight.Model.IamRoleRef[]]]
-        ${Roles}
+        ${Roles},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[intersight.Model.IamServiceProviderRef]]
+        ${ServiceProvider}
     )
 
     Process {
@@ -67,7 +70,8 @@ function New-IamSystem {
             ${Idp},
             ${PrivilegeSets},
             ${Privileges},
-            ${Roles}
+            ${Roles},
+            ${ServiceProvider}
         )
     }
 }

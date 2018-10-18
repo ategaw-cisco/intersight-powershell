@@ -56,6 +56,9 @@ function New-EquipmentFanModule {
         [System.Nullable[intersight.Model.EquipmentChassisRef]]
         ${EquipmentChassis},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[intersight.Model.EquipmentRackEnclosureRef]]
+        ${EquipmentRackEnclosure},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[intersight.Model.EquipmentFanRef[]]]
         ${Fans},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
@@ -95,6 +98,7 @@ function New-EquipmentFanModule {
             ${Vendor},
             ${ComputeRackUnit},
             ${EquipmentChassis},
+            ${EquipmentRackEnclosure},
             ${Fans},
             ${NetworkElement},
             ${OperState},

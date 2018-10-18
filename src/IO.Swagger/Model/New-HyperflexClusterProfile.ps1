@@ -69,6 +69,9 @@ function New-HyperflexClusterProfile {
         ${ExtIscsiStorage},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
+        ${HxdpVersion},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
         ${HypervisorType},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[intersight.Model.HyperflexLocalCredentialPolicyRef]]
@@ -141,6 +144,7 @@ function New-HyperflexClusterProfile {
             ${DataIpAddress},
             ${ExtFcStorage},
             ${ExtIscsiStorage},
+            ${HxdpVersion},
             ${HypervisorType},
             ${LocalCredential},
             ${MacAddressPrefix},

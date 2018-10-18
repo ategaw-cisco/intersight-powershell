@@ -107,6 +107,9 @@ function New-StorageController {
         [String]
         ${Type},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[intersight.Model.StorageVirtualDriveExtensionRef[]]]
+        ${VirtualDriveExtensions},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[intersight.Model.StorageVirtualDriveRef[]]]
         ${VirtualDrives}
     )
@@ -151,6 +154,7 @@ function New-StorageController {
             ${RunningFirmware},
             ${SelfEncryptEnabled},
             ${Type},
+            ${VirtualDriveExtensions},
             ${VirtualDrives}
         )
     }
