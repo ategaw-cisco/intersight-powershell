@@ -35,6 +35,9 @@ function New-InventoryDeviceInfo {
         [System.Nullable[Boolean]]
         ${EventCounterEnabled},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[Int64]]
+        ${Interval},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[intersight.Model.InventoryJobInfo[]]]
         ${JobInfo},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
@@ -58,6 +61,7 @@ function New-InventoryDeviceInfo {
             ${Tags},
             ${EventCounter},
             ${EventCounterEnabled},
+            ${Interval},
             ${JobInfo},
             ${RegisteredDevice}
         )

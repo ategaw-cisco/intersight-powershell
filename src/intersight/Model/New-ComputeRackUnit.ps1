@@ -140,6 +140,9 @@ function New-ComputeRackUnit {
         [System.Nullable[intersight.Model.EquipmentPsuRef[]]]
         ${Psus},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[intersight.Model.EquipmentRackEnclosureSlotRef]]
+        ${RackEnclosureSlot},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[intersight.Model.AssetDeviceRegistrationRef]]
         ${RegisteredDevice},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
@@ -207,6 +210,7 @@ function New-ComputeRackUnit {
             ${GenericInventoryHolders},
             ${LocatorLed},
             ${Psus},
+            ${RackEnclosureSlot},
             ${RegisteredDevice},
             ${SasExpanders},
             ${ServerId},

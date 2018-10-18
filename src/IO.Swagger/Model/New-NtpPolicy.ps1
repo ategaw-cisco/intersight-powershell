@@ -38,7 +38,7 @@ function New-NtpPolicy {
         [System.Nullable[Boolean]]
         ${Enabled},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
-        [System.Nullable[String[]]]
+        [String]
         ${NtpServers},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[intersight.Model.IamAccountRef]]

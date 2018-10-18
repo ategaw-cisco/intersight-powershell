@@ -63,6 +63,9 @@ function New-FirmwareDistributable {
         ${Size},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
+        ${SoftwareAdvisoryUrl},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
         ${SoftwareTypeId},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
@@ -103,6 +106,7 @@ function New-FirmwareDistributable {
             ${PlatformType},
             ${ReleaseDate},
             ${Size},
+            ${SoftwareAdvisoryUrl},
             ${SoftwareTypeId},
             ${Source},
             ${SupportedModels},

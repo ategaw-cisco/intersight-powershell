@@ -53,17 +53,20 @@ function New-ServerProfile {
         [System.Nullable[intersight.Model.ComputeRackUnitRef]]
         ${AssociatedServer},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
-        [System.Nullable[intersight.Model.ServerConfigChangeDetailsRef]]
+        [System.Nullable[intersight.Model.ServerConfigChangeDetailRef[]]]
         ${ConfigChangeDetails},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
-        [System.Nullable[intersight.Model.ServerConfigChange]]
+        [System.Nullable[intersight.Model.PolicyConfigChange]]
         ${ConfigChanges},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[intersight.Model.ServerConfigResultRef]]
         ${ConfigResult},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[intersight.Model.IamAccountRef]]
-        ${Organization}
+        ${Organization},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[intersight.Model.WorkflowWorkflowInfoRef[]]]
+        ${RunningWorkflows}
     )
 
     Process {
@@ -91,7 +94,8 @@ function New-ServerProfile {
             ${ConfigChangeDetails},
             ${ConfigChanges},
             ${ConfigResult},
-            ${Organization}
+            ${Organization},
+            ${RunningWorkflows}
         )
     }
 }

@@ -59,15 +59,6 @@ function New-IamAccount {
         [System.Nullable[intersight.Model.IamRoleRef[]]]
         ${Roles},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
-        [String]
-        ${RootUserEmail},
-        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
-        [String]
-        ${RootUserId},
-        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
-        [String]
-        ${RootUserName},
-        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[intersight.Model.IamSessionLimitsRef]]
         ${SessionLimits},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
@@ -99,9 +90,6 @@ function New-IamAccount {
             ${Privileges},
             ${ResourceLimits},
             ${Roles},
-            ${RootUserEmail},
-            ${RootUserId},
-            ${RootUserName},
             ${SessionLimits},
             ${Status}
         )

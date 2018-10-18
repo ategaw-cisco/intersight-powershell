@@ -137,6 +137,9 @@ function New-StorageVirtualDrive {
         [String]
         ${VendorUuid},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[intersight.Model.StorageVirtualDriveExtensionRef]]
+        ${VirtualDriveExtension},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
         ${VirtualDriveId}
     )
@@ -191,6 +194,7 @@ function New-StorageVirtualDrive {
             ${Uuid},
             ${VdMemberEps},
             ${VendorUuid},
+            ${VirtualDriveExtension},
             ${VirtualDriveId}
         )
     }

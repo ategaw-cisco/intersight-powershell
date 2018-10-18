@@ -32,8 +32,17 @@ function New-IamIdpReference {
         [System.Nullable[intersight.Model.IamAccountRef]]
         ${Account},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${DomainName},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[intersight.Model.IamIdpRef]]
         ${Idp},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${IdpEntityId},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[Boolean]]
+        ${MultiFactorAuthentication},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
         ${Name},
@@ -66,7 +75,10 @@ function New-IamIdpReference {
             ${Parent},
             ${Tags},
             ${Account},
+            ${DomainName},
             ${Idp},
+            ${IdpEntityId},
+            ${MultiFactorAuthentication},
             ${Name},
             ${UserLoginTime},
             ${UserPreferences},

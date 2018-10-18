@@ -48,6 +48,9 @@ function New-AaaAuditRecord {
         ${Account},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
+        ${Email},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
         ${InstId},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[intersight.Model.IamSessionRef]]
@@ -83,6 +86,7 @@ function New-AaaAuditRecord {
             ${Request},
             ${TraceId},
             ${Account},
+            ${Email},
             ${InstId},
             ${Sessions},
             ${SourceIp},

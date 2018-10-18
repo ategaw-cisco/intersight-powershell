@@ -47,10 +47,13 @@ function New-SmtpPolicy {
         [System.Nullable[intersight.Model.PolicyAbstractConfigProfileRef[]]]
         ${Profiles},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${SenderEmail},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[Int64]]
         ${SmtpPort},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
-        [System.Nullable[String[]]]
+        [String]
         ${SmtpRecipients},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
@@ -77,6 +80,7 @@ function New-SmtpPolicy {
             ${MinSeverity},
             ${Organization},
             ${Profiles},
+            ${SenderEmail},
             ${SmtpPort},
             ${SmtpRecipients},
             ${SmtpServer}

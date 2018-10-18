@@ -57,7 +57,13 @@ function New-HyperflexCluster {
         ${HxVersion},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
+        ${HypervisorType},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
         ${HypervisorVersion},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[intersight.Model.HyperflexNodeRef[]]]
+        ${Nodes},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[intersight.Model.AssetDeviceRegistrationRef]]
         ${RegisteredDevice},
@@ -92,7 +98,9 @@ function New-HyperflexCluster {
             ${DeviceId},
             ${FltAggr},
             ${HxVersion},
+            ${HypervisorType},
             ${HypervisorVersion},
+            ${Nodes},
             ${RegisteredDevice},
             ${Summary},
             ${VmCount}

@@ -38,6 +38,9 @@ function New-WorkflowTaskMeta {
         [System.Nullable[String[]]]
         ${InputKeys},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[Boolean]]
+        ${Internal},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
         ${Name},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
@@ -83,6 +86,7 @@ function New-WorkflowTaskMeta {
             ${ActionType},
             ${Description},
             ${InputKeys},
+            ${Internal},
             ${Name},
             ${OutputKeys},
             ${ResponseTimeoutSec},

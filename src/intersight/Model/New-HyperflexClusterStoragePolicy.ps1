@@ -41,6 +41,9 @@ function New-HyperflexClusterStoragePolicy {
         [System.Nullable[Boolean]]
         ${DiskPartitionCleanup},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[intersight.Model.HyperflexLogicalAvailabilityZone]]
+        ${LogicalAvalabilityZoneConfig},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[intersight.Model.IamAccountRef]]
         ${Organization},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
@@ -66,6 +69,7 @@ function New-HyperflexClusterStoragePolicy {
             ${Name},
             ${ClusterProfiles},
             ${DiskPartitionCleanup},
+            ${LogicalAvalabilityZoneConfig},
             ${Organization},
             ${VdiOptimization}
         )

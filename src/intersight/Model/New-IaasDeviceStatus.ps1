@@ -54,7 +54,10 @@ function New-IaasDeviceStatus {
         ${IpAddress},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
-        ${Pod}
+        ${Pod},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${PodType}
     )
 
     Process {
@@ -79,7 +82,8 @@ function New-IaasDeviceStatus {
             ${DeviceVersion},
             ${Guid},
             ${IpAddress},
-            ${Pod}
+            ${Pod},
+            ${PodType}
         )
     }
 }
