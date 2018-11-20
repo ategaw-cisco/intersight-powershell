@@ -24,7 +24,13 @@ function Invoke-IamAccountApiIamAccountsGet {
         ${$orderby},
         [Parameter(Position = 7, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
-        ${$expand}
+        ${$expand},
+        [Parameter(Position = 8, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [String]
+        ${$apply},
+        [Parameter(Position = 9, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [String]
+        ${at}
     )
 
     Process {
@@ -39,7 +45,9 @@ function Invoke-IamAccountApiIamAccountsGet {
             ${$filter},
             ${$select},
             ${$orderby},
-            ${$expand}
+            ${$expand},
+            ${$apply},
+            ${at}
         )
     }
 }
@@ -76,6 +84,50 @@ function Invoke-IamAccountApiIamAccountsMoidGet {
 
         $Script:IamAccountApi.IamAccountsMoidGet(
             ${moid}
+        )
+    }
+}
+
+function Invoke-IamAccountApiIamAccountsMoidPatch {
+    [CmdletBinding()]
+    Param (
+        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [String]
+        ${moid},
+        [Parameter(Position = 1, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [intersight.Model.IamAccount]
+        ${body}
+    )
+
+    Process {
+        'Calling method: IamAccountApi-IamAccountsMoidPatch' | Write-Verbose
+        $PSBoundParameters | Out-DebugParameter | Write-Debug
+
+        $Script:IamAccountApi.IamAccountsMoidPatch(
+            ${moid},
+            ${body}
+        )
+    }
+}
+
+function Invoke-IamAccountApiIamAccountsMoidPost {
+    [CmdletBinding()]
+    Param (
+        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [String]
+        ${moid},
+        [Parameter(Position = 1, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [intersight.Model.IamAccount]
+        ${body}
+    )
+
+    Process {
+        'Calling method: IamAccountApi-IamAccountsMoidPost' | Write-Verbose
+        $PSBoundParameters | Out-DebugParameter | Write-Debug
+
+        $Script:IamAccountApi.IamAccountsMoidPost(
+            ${moid},
+            ${body}
         )
     }
 }
