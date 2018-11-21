@@ -24,7 +24,13 @@ function Invoke-IamUserGroupApiIamUserGroupsGet {
         ${$orderby},
         [Parameter(Position = 7, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
-        ${$expand}
+        ${$expand},
+        [Parameter(Position = 8, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [String]
+        ${$apply},
+        [Parameter(Position = 9, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [String]
+        ${at}
     )
 
     Process {
@@ -39,7 +45,27 @@ function Invoke-IamUserGroupApiIamUserGroupsGet {
             ${$filter},
             ${$select},
             ${$orderby},
-            ${$expand}
+            ${$expand},
+            ${$apply},
+            ${at}
+        )
+    }
+}
+
+function Invoke-IamUserGroupApiIamUserGroupsMoidDelete {
+    [CmdletBinding()]
+    Param (
+        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [String]
+        ${moid}
+    )
+
+    Process {
+        'Calling method: IamUserGroupApi-IamUserGroupsMoidDelete' | Write-Verbose
+        $PSBoundParameters | Out-DebugParameter | Write-Debug
+
+        $Script:IamUserGroupApi.IamUserGroupsMoidDelete(
+            ${moid}
         )
     }
 }
@@ -58,6 +84,68 @@ function Invoke-IamUserGroupApiIamUserGroupsMoidGet {
 
         $Script:IamUserGroupApi.IamUserGroupsMoidGet(
             ${moid}
+        )
+    }
+}
+
+function Invoke-IamUserGroupApiIamUserGroupsMoidPatch {
+    [CmdletBinding()]
+    Param (
+        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [String]
+        ${moid},
+        [Parameter(Position = 1, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [intersight.Model.IamUserGroup]
+        ${body}
+    )
+
+    Process {
+        'Calling method: IamUserGroupApi-IamUserGroupsMoidPatch' | Write-Verbose
+        $PSBoundParameters | Out-DebugParameter | Write-Debug
+
+        $Script:IamUserGroupApi.IamUserGroupsMoidPatch(
+            ${moid},
+            ${body}
+        )
+    }
+}
+
+function Invoke-IamUserGroupApiIamUserGroupsMoidPost {
+    [CmdletBinding()]
+    Param (
+        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [String]
+        ${moid},
+        [Parameter(Position = 1, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [intersight.Model.IamUserGroup]
+        ${body}
+    )
+
+    Process {
+        'Calling method: IamUserGroupApi-IamUserGroupsMoidPost' | Write-Verbose
+        $PSBoundParameters | Out-DebugParameter | Write-Debug
+
+        $Script:IamUserGroupApi.IamUserGroupsMoidPost(
+            ${moid},
+            ${body}
+        )
+    }
+}
+
+function Invoke-IamUserGroupApiIamUserGroupsPost {
+    [CmdletBinding()]
+    Param (
+        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [intersight.Model.IamUserGroup]
+        ${body}
+    )
+
+    Process {
+        'Calling method: IamUserGroupApi-IamUserGroupsPost' | Write-Verbose
+        $PSBoundParameters | Out-DebugParameter | Write-Debug
+
+        $Script:IamUserGroupApi.IamUserGroupsPost(
+            ${body}
         )
     }
 }

@@ -24,7 +24,13 @@ function Invoke-MetaDefinitionApiMetaDefinitionsGet {
         ${$orderby},
         [Parameter(Position = 7, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
-        ${$expand}
+        ${$expand},
+        [Parameter(Position = 8, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [String]
+        ${$apply},
+        [Parameter(Position = 9, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [String]
+        ${at}
     )
 
     Process {
@@ -39,7 +45,27 @@ function Invoke-MetaDefinitionApiMetaDefinitionsGet {
             ${$filter},
             ${$select},
             ${$orderby},
-            ${$expand}
+            ${$expand},
+            ${$apply},
+            ${at}
+        )
+    }
+}
+
+function Invoke-MetaDefinitionApiMetaDefinitionsMoidDelete {
+    [CmdletBinding()]
+    Param (
+        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [String]
+        ${moid}
+    )
+
+    Process {
+        'Calling method: MetaDefinitionApi-MetaDefinitionsMoidDelete' | Write-Verbose
+        $PSBoundParameters | Out-DebugParameter | Write-Debug
+
+        $Script:MetaDefinitionApi.MetaDefinitionsMoidDelete(
+            ${moid}
         )
     }
 }
