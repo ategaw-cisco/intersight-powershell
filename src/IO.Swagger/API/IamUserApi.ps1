@@ -24,7 +24,13 @@ function Invoke-IamUserApiIamUsersGet {
         ${$orderby},
         [Parameter(Position = 7, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
-        ${$expand}
+        ${$expand},
+        [Parameter(Position = 8, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [String]
+        ${$apply},
+        [Parameter(Position = 9, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [String]
+        ${at}
     )
 
     Process {
@@ -39,7 +45,9 @@ function Invoke-IamUserApiIamUsersGet {
             ${$filter},
             ${$select},
             ${$orderby},
-            ${$expand}
+            ${$expand},
+            ${$apply},
+            ${at}
         )
     }
 }
@@ -76,6 +84,50 @@ function Invoke-IamUserApiIamUsersMoidGet {
 
         $Script:IamUserApi.IamUsersMoidGet(
             ${moid}
+        )
+    }
+}
+
+function Invoke-IamUserApiIamUsersMoidPatch {
+    [CmdletBinding()]
+    Param (
+        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [String]
+        ${moid},
+        [Parameter(Position = 1, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [intersight.Model.IamUser]
+        ${body}
+    )
+
+    Process {
+        'Calling method: IamUserApi-IamUsersMoidPatch' | Write-Verbose
+        $PSBoundParameters | Out-DebugParameter | Write-Debug
+
+        $Script:IamUserApi.IamUsersMoidPatch(
+            ${moid},
+            ${body}
+        )
+    }
+}
+
+function Invoke-IamUserApiIamUsersMoidPost {
+    [CmdletBinding()]
+    Param (
+        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [String]
+        ${moid},
+        [Parameter(Position = 1, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [intersight.Model.IamUser]
+        ${body}
+    )
+
+    Process {
+        'Calling method: IamUserApi-IamUsersMoidPost' | Write-Verbose
+        $PSBoundParameters | Out-DebugParameter | Write-Debug
+
+        $Script:IamUserApi.IamUsersMoidPost(
+            ${moid},
+            ${body}
         )
     }
 }
