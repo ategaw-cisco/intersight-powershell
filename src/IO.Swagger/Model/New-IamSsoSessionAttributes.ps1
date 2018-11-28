@@ -3,6 +3,9 @@ function New-IamSsoSessionAttributes {
     Param (
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
+        ${IdpSessionExpiration},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
         ${IdpSessionIndex}
     )
 
@@ -11,6 +14,7 @@ function New-IamSsoSessionAttributes {
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         New-Object -TypeName intersight.Model.IamSsoSessionAttributes -ArgumentList @(
+            ${IdpSessionExpiration},
             ${IdpSessionIndex}
         )
     }
