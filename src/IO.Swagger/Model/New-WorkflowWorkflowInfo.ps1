@@ -29,8 +29,14 @@ function New-WorkflowWorkflowInfo {
         [System.Nullable[intersight.Model.MoTag[]]]
         ${Tags},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[intersight.Model.MoVersionContext]]
+        ${VersionContext},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[intersight.Model.IamAccountRef]]
         ${Account},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${Action},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[System.DateTime]]
         ${EndTime},
@@ -41,7 +47,10 @@ function New-WorkflowWorkflowInfo {
         [String]
         ${InstId},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
-        [String]
+        [System.Nullable[Boolean]]
+        ${Internal},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[Int64]]
         ${MetaVersion},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
@@ -49,6 +58,9 @@ function New-WorkflowWorkflowInfo {
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[String]]
         ${Output},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [System.Nullable[intersight.Model.WorkflowPendingDynamicWorkflowInfoRef]]
+        ${PendingDynamicWorkflowInfo},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[Double]]
         ${Progress},
@@ -71,11 +83,17 @@ function New-WorkflowWorkflowInfo {
         [String]
         ${UserId},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${WaitReason},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[String]]
         ${WorkflowCtx},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
         ${WorkflowKey},
+        [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${WorkflowMetaType},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[Int64]]
         ${WorkflowTaskCount}
@@ -95,13 +113,17 @@ function New-WorkflowWorkflowInfo {
             ${Owners},
             ${Parent},
             ${Tags},
+            ${VersionContext},
             ${Account},
+            ${Action},
             ${EndTime},
             ${Input},
             ${InstId},
+            ${Internal},
             ${MetaVersion},
             ${Name},
             ${Output},
+            ${PendingDynamicWorkflowInfo},
             ${Progress},
             ${Src},
             ${StartTime},
@@ -109,8 +131,10 @@ function New-WorkflowWorkflowInfo {
             ${TaskInfos},
             ${Type},
             ${UserId},
+            ${WaitReason},
             ${WorkflowCtx},
             ${WorkflowKey},
+            ${WorkflowMetaType},
             ${WorkflowTaskCount}
         )
     }
