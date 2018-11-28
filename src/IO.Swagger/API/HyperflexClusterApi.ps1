@@ -24,7 +24,13 @@ function Invoke-HyperflexClusterApiHyperflexClustersGet {
         ${$orderby},
         [Parameter(Position = 7, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
-        ${$expand}
+        ${$expand},
+        [Parameter(Position = 8, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [String]
+        ${$apply},
+        [Parameter(Position = 9, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [String]
+        ${at}
     )
 
     Process {
@@ -39,25 +45,9 @@ function Invoke-HyperflexClusterApiHyperflexClustersGet {
             ${$filter},
             ${$select},
             ${$orderby},
-            ${$expand}
-        )
-    }
-}
-
-function Invoke-HyperflexClusterApiHyperflexClustersMoidDelete {
-    [CmdletBinding()]
-    Param (
-        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
-        [String]
-        ${moid}
-    )
-
-    Process {
-        'Calling method: HyperflexClusterApi-HyperflexClustersMoidDelete' | Write-Verbose
-        $PSBoundParameters | Out-DebugParameter | Write-Debug
-
-        $Script:HyperflexClusterApi.HyperflexClustersMoidDelete(
-            ${moid}
+            ${$expand},
+            ${$apply},
+            ${at}
         )
     }
 }
@@ -76,50 +66,6 @@ function Invoke-HyperflexClusterApiHyperflexClustersMoidGet {
 
         $Script:HyperflexClusterApi.HyperflexClustersMoidGet(
             ${moid}
-        )
-    }
-}
-
-function Invoke-HyperflexClusterApiHyperflexClustersMoidPatch {
-    [CmdletBinding()]
-    Param (
-        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
-        [String]
-        ${moid},
-        [Parameter(Position = 1, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
-        [intersight.Model.HyperflexCluster]
-        ${body}
-    )
-
-    Process {
-        'Calling method: HyperflexClusterApi-HyperflexClustersMoidPatch' | Write-Verbose
-        $PSBoundParameters | Out-DebugParameter | Write-Debug
-
-        $Script:HyperflexClusterApi.HyperflexClustersMoidPatch(
-            ${moid},
-            ${body}
-        )
-    }
-}
-
-function Invoke-HyperflexClusterApiHyperflexClustersMoidPost {
-    [CmdletBinding()]
-    Param (
-        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
-        [String]
-        ${moid},
-        [Parameter(Position = 1, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
-        [intersight.Model.HyperflexCluster]
-        ${body}
-    )
-
-    Process {
-        'Calling method: HyperflexClusterApi-HyperflexClustersMoidPost' | Write-Verbose
-        $PSBoundParameters | Out-DebugParameter | Write-Debug
-
-        $Script:HyperflexClusterApi.HyperflexClustersMoidPost(
-            ${moid},
-            ${body}
         )
     }
 }

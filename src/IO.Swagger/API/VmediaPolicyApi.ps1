@@ -24,7 +24,13 @@ function Invoke-VmediaPolicyApiVmediaPoliciesGet {
         ${$orderby},
         [Parameter(Position = 7, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
-        ${$expand}
+        ${$expand},
+        [Parameter(Position = 8, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [String]
+        ${$apply},
+        [Parameter(Position = 9, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [String]
+        ${at}
     )
 
     Process {
@@ -39,7 +45,9 @@ function Invoke-VmediaPolicyApiVmediaPoliciesGet {
             ${$filter},
             ${$select},
             ${$orderby},
-            ${$expand}
+            ${$expand},
+            ${$apply},
+            ${at}
         )
     }
 }
