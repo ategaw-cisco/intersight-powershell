@@ -4,7 +4,7 @@ Intersight REST API
 
 This is Intersight REST API 
 
-OpenAPI spec version: 1.0.9-262
+OpenAPI spec version: 1.0.9-263
 
 -->
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -12,7 +12,7 @@ OpenAPI spec version: 1.0.9-262
     
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3EBE5604-E1B1-4AC3-93DC-31CA71E048EB}</ProjectGuid>
+    <ProjectGuid>{25AD70D4-3CFA-49F0-90B7-1346E1510C76}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>intersight</RootNamespace>

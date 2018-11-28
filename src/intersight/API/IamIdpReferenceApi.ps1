@@ -70,3 +70,47 @@ function Invoke-IamIdpReferenceApiIamIdpReferencesMoidGet {
     }
 }
 
+function Invoke-IamIdpReferenceApiIamIdpReferencesMoidPatch {
+    [CmdletBinding()]
+    Param (
+        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [String]
+        ${moid},
+        [Parameter(Position = 1, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [intersight.Model.IamIdpReference]
+        ${body}
+    )
+
+    Process {
+        'Calling method: IamIdpReferenceApi-IamIdpReferencesMoidPatch' | Write-Verbose
+        $PSBoundParameters | Out-DebugParameter | Write-Debug
+
+        $Script:IamIdpReferenceApi.IamIdpReferencesMoidPatch(
+            ${moid},
+            ${body}
+        )
+    }
+}
+
+function Invoke-IamIdpReferenceApiIamIdpReferencesMoidPost {
+    [CmdletBinding()]
+    Param (
+        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [String]
+        ${moid},
+        [Parameter(Position = 1, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [intersight.Model.IamIdpReference]
+        ${body}
+    )
+
+    Process {
+        'Calling method: IamIdpReferenceApi-IamIdpReferencesMoidPost' | Write-Verbose
+        $PSBoundParameters | Out-DebugParameter | Write-Debug
+
+        $Script:IamIdpReferenceApi.IamIdpReferencesMoidPost(
+            ${moid},
+            ${body}
+        )
+    }
+}
+
