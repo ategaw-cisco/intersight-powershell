@@ -24,7 +24,13 @@ function Invoke-HyperflexAlarmApiHyperflexAlarmsGet {
         ${$orderby},
         [Parameter(Position = 7, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
-        ${$expand}
+        ${$expand},
+        [Parameter(Position = 8, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [String]
+        ${$apply},
+        [Parameter(Position = 9, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [String]
+        ${at}
     )
 
     Process {
@@ -39,25 +45,9 @@ function Invoke-HyperflexAlarmApiHyperflexAlarmsGet {
             ${$filter},
             ${$select},
             ${$orderby},
-            ${$expand}
-        )
-    }
-}
-
-function Invoke-HyperflexAlarmApiHyperflexAlarmsMoidDelete {
-    [CmdletBinding()]
-    Param (
-        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
-        [String]
-        ${moid}
-    )
-
-    Process {
-        'Calling method: HyperflexAlarmApi-HyperflexAlarmsMoidDelete' | Write-Verbose
-        $PSBoundParameters | Out-DebugParameter | Write-Debug
-
-        $Script:HyperflexAlarmApi.HyperflexAlarmsMoidDelete(
-            ${moid}
+            ${$expand},
+            ${$apply},
+            ${at}
         )
     }
 }
@@ -76,24 +66,6 @@ function Invoke-HyperflexAlarmApiHyperflexAlarmsMoidGet {
 
         $Script:HyperflexAlarmApi.HyperflexAlarmsMoidGet(
             ${moid}
-        )
-    }
-}
-
-function Invoke-HyperflexAlarmApiHyperflexAlarmsPost {
-    [CmdletBinding()]
-    Param (
-        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
-        [intersight.Model.HyperflexAlarm]
-        ${body}
-    )
-
-    Process {
-        'Calling method: HyperflexAlarmApi-HyperflexAlarmsPost' | Write-Verbose
-        $PSBoundParameters | Out-DebugParameter | Write-Debug
-
-        $Script:HyperflexAlarmApi.HyperflexAlarmsPost(
-            ${body}
         )
     }
 }

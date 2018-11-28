@@ -24,7 +24,13 @@ function Invoke-IamIdpApiIamIdpsGet {
         ${$orderby},
         [Parameter(Position = 7, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
-        ${$expand}
+        ${$expand},
+        [Parameter(Position = 8, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [String]
+        ${$apply},
+        [Parameter(Position = 9, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [String]
+        ${at}
     )
 
     Process {
@@ -39,7 +45,27 @@ function Invoke-IamIdpApiIamIdpsGet {
             ${$filter},
             ${$select},
             ${$orderby},
-            ${$expand}
+            ${$expand},
+            ${$apply},
+            ${at}
+        )
+    }
+}
+
+function Invoke-IamIdpApiIamIdpsMoidDelete {
+    [CmdletBinding()]
+    Param (
+        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [String]
+        ${moid}
+    )
+
+    Process {
+        'Calling method: IamIdpApi-IamIdpsMoidDelete' | Write-Verbose
+        $PSBoundParameters | Out-DebugParameter | Write-Debug
+
+        $Script:IamIdpApi.IamIdpsMoidDelete(
+            ${moid}
         )
     }
 }
@@ -58,6 +84,68 @@ function Invoke-IamIdpApiIamIdpsMoidGet {
 
         $Script:IamIdpApi.IamIdpsMoidGet(
             ${moid}
+        )
+    }
+}
+
+function Invoke-IamIdpApiIamIdpsMoidPatch {
+    [CmdletBinding()]
+    Param (
+        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [String]
+        ${moid},
+        [Parameter(Position = 1, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [intersight.Model.IamIdp]
+        ${body}
+    )
+
+    Process {
+        'Calling method: IamIdpApi-IamIdpsMoidPatch' | Write-Verbose
+        $PSBoundParameters | Out-DebugParameter | Write-Debug
+
+        $Script:IamIdpApi.IamIdpsMoidPatch(
+            ${moid},
+            ${body}
+        )
+    }
+}
+
+function Invoke-IamIdpApiIamIdpsMoidPost {
+    [CmdletBinding()]
+    Param (
+        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [String]
+        ${moid},
+        [Parameter(Position = 1, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [intersight.Model.IamIdp]
+        ${body}
+    )
+
+    Process {
+        'Calling method: IamIdpApi-IamIdpsMoidPost' | Write-Verbose
+        $PSBoundParameters | Out-DebugParameter | Write-Debug
+
+        $Script:IamIdpApi.IamIdpsMoidPost(
+            ${moid},
+            ${body}
+        )
+    }
+}
+
+function Invoke-IamIdpApiIamIdpsPost {
+    [CmdletBinding()]
+    Param (
+        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [intersight.Model.IamIdp]
+        ${body}
+    )
+
+    Process {
+        'Calling method: IamIdpApi-IamIdpsPost' | Write-Verbose
+        $PSBoundParameters | Out-DebugParameter | Write-Debug
+
+        $Script:IamIdpApi.IamIdpsPost(
+            ${body}
         )
     }
 }
