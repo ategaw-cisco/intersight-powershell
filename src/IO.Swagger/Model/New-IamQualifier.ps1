@@ -38,7 +38,7 @@ function New-IamQualifier {
         [System.Nullable[intersight.Model.IamUserGroupRef]]
         ${Usergroup},
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
-        [String]
+        [System.Nullable[String[]]]
         ${Value}
     )
 
